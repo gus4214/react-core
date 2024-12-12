@@ -1,0 +1,8 @@
+{
+  "presets": ["@babel/preset-env", "@babel/preset-react"],
+  // preset-env : 최신 JavaScript를 이전 문법으로 변환.
+  // preset-react : JSX와 React 문법 지원.
+
+  "plugins": ["@babel/plugin-transform-react-jsx"]
+  //  plugin-transform-react-jsx : JSX를 React.createElement로 변환.
+}
