@@ -7,15 +7,7 @@ export default defineConfig({
       // jsxRuntime: "automatic",
       // jsxImportSource: "src/jsxRuntime",
       babel: {
-        plugins: [
-          [
-            "@babel/plugin-transform-react-jsx",
-            {
-              runtime: "classic",
-              pragma: "createElement",
-            },
-          ],
-        ],
+        presets: [["@babel/preset-react", { pragma: "createElement" }]],
       },
     }),
   ],
