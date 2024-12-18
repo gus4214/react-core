@@ -6,7 +6,7 @@ export default function App() {
     <div id="app">
       <Header title={"Hello, React Core ~!"} />
       <Content />
-      <p>This is a paragraph</p>
+      <p className="paragraph">This is a paragraph</p>
       footer
     </div>
   );

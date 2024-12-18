@@ -1,4 +1,19 @@
-export function createElement(type, props, ...children) {
+import {
+  Child,
+  ElementType,
+  Props,
+  VirtualDOM,
+  TextElement,
+  Element,
+} from "./types";
+
+export const Fragment = Symbol("Fragment");
+
+export function createElement(
+  type: ElementType,
+  props?: Props,
+  ...children: Child[]
+): Element {
   props = props || {};
 
   const flatChildren = children
@@ -12,17 +27,17 @@ export function createElement(type, props, ...children) {
         return {
           type: "TEXT_ELEMENT",
           props: { nodeValue: String(child) },
-        };
+        } as TextElement;
       }
-      return child;
+      return child as VirtualDOM;
     });
 
-  // children 배열 길이에 따라 props.children 설정
-  if (flatChildren.length === 1) {
-    props.children = flatChildren[0];
-  } else if (flatChildren.length > 1) {
-    props.children = flatChildren;
+  if (type === Fragment) {
+    return flatChildren;
   }
+
+  // children 배열 길이에 따라 props.children 설정
+  props.children = flatChildren.length === 1 ? flatChildren[0] : flatChildren;
 
   // 함수형 컴포넌트 처리
   if (typeof type === "function") {
