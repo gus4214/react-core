@@ -1,6 +1,5 @@
 import Content from "./components/Content.jsx";
 import Header from "./components/Header.jsx";
-import { createElement } from "./createElement.js";
 
 export default function App() {
   return (

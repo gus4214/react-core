@@ -1,4 +1,3 @@
-import { createElement } from "../createElement.js";
 const Content = () => {
   return (
     <main id="main-content">
