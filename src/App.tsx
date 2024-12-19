@@ -1,5 +1,5 @@
-import Content from "./components/Content.jsx";
-import Header from "./components/Header.jsx";
+import Content from "src/components/Content";
+import Header from "src/components/Header";
 
 export default function App() {
   return (

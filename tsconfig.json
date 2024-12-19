@@ -5,6 +5,11 @@
     "module": "ESNext",
     "lib": ["ES2020", "DOM", "DOM.Iterable"],
     "skipLibCheck": true,
+    "jsx": "preserve", // JSX 문법을 변환하지 않고 그대로 유지 -> Vite 빌드 도구가 JSX 처리하도록 위임
+    "baseUrl": ".", // 프로젝트 루트를 기준으로 경로 매핑
+    "paths": {
+      "src/*": ["src/*"] // src 폴더를 절대 경로로 매핑
+    },
 
     /* Bundler mode */
     "moduleResolution": "bundler",
