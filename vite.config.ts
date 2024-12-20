@@ -14,6 +14,7 @@ export default defineConfig({
     // 따라서 경로 별칭 설정 필요
     alias: {
       src: path.resolve(__dirname, "./src"),
+      libs: path.resolve(__dirname, "./libs"),
     },
   },
 });

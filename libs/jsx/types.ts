@@ -5,27 +5,13 @@ export type ElementType =
   | ((props: any) => VirtualDOM)
   | typeof Fragment;
 
-export type Props = Record<string, unknown> | null;
+export type Props = Record<string, unknown>;
 
-export type Child =
-  | string
-  | number
-  | TextElement
-  | VirtualDOM
-  | null
-  | undefined
-  | boolean;
-
-export type TextElement = {
-  type: "TEXT_ELEMENT";
-  props: {
-    nodeValue: string;
-  };
-};
+export type Child = string | number | VirtualDOM | null | undefined | boolean;
 
 export type VirtualDOM = {
-  type: ElementType;
-  props?: Props & { children?: VirtualDOM | VirtualDOM[] };
+  type?: ElementType;
+  props: Props & { children?: VirtualDOM | VirtualDOM[] };
 };
 
-export type Element = VirtualDOM | (TextElement | VirtualDOM)[];
+export type Element = VirtualDOM | VirtualDOM[];
